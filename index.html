@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Formulários</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro de Interesses Musicais</h1>
+    </header>
+
+    <main>
+        <form id="musicForm" action="#" method="post" novalidate>
+            <fieldset>
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required autofocus>
+                    <span class="error-message" id="error-nome"></span>
+                </div>
+
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="seuemail@dominio.com">
+                    <span class="error-message" id="error-email"></span>
+                </div>
+
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\)\s\d{5}-\d{4}" [cite: 23]
+                        placeholder="(xx) xxxxx-xxxx">
+                    <span class="error-message" id="error-telefone"></span>
+                </div>
+
+                <div>
+                    <label for="nascimento">Data de Nascimento:</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                    <span class="error-message" id="error-nascimento"></span>
+                </div>
+
+                <div>
+                    <label for="foto">Foto de Perfil:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*">
+                    <span class="error-message" id="error-foto"></span>
+                </div>
+            </fieldset>
+
+            <fieldset class="music-group">
+                <legend>Estilos Musicais Preferidos (selecione 1 ou mais):</legend>
+                <div>
+                    <input type="checkbox" id="style_rock" name="estilos[]" value="rock">
+                    <label for="style_rock">Rock</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="style_pop" name="estilos[]" value="pop">
+                    <label for="style_pop">Pop</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="style_jazz" name="estilos[]" value="jazz">
+                    <label for="style_jazz">Jazz</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="style_mpb" name="estilos[]" value="mpb">
+                    <label for="style_mpb">MPB</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="style_classical" name="estilos[]" value="classical">
+                    <label for="style_classical">Clássica</label>
+                </div>
+
+                <span class="error-message" id="error-estilos"></span>
+            </fieldset>
+
+            <fieldset class="music-group">
+                <legend>Álbuns Preferidos (selecione exatamente 3):</legend>
+                <div>
+                    <input type="checkbox" id="album_1" name="albuns[]" value="album1">
+                    <label for="album_1">Dark Side of the Moon</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="album_2" name="albuns[]" value="album2">
+                    <label for="album_2">Thriller</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="album_3" name="albuns[]" value="album3">
+                    <label for="album_3">Abbey Road</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="album_4" name="albuns[]" value="album4">
+                    <label for="album_4">The Wall</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="album_5" name="albuns[]" value="album5">
+                    <label for="album_5">Back to Black</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="album_6" name="albuns[]" value="album6">
+                    <label for="album_6">A Hard Day's Night</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="album_7" name="albuns[]" value="album7">
+                    <label for="album_7">The Great War</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="album_8" name="albuns[]" value="album8">
+                    <label for="album_8">The Last Stand</label>
+                </div>
+                <span class="error-message" id="error-albuns"></span>
+            </fieldset>
+
+            <div>
+                <label for="artistas">Artistas dos estilos escolhidos:</label>
+                <textarea id="artistas" name="artistas" rows="8" placeholder="Liste nomes de artistas..."></textarea>
+                <span class="error-message" id="error-artistas"></span>
+            </div>
+
+            <div>
+                <label for="melhor_cantor">Melhor cantor(a) da história:</label>
+                <select id="melhor_cantor" name="melhor_cantor" required>
+                    <option value="">Selecione...</option>
+                    <optgroup label="Rock">
+                        <option value="freddie">Freddie Mercury</option>
+                        <option value="elvis">Elvis Presley</option>
+                        <option value="janis_joplin">Janes Joplin</option>
+                    </optgroup>
+                    <optgroup label="Pop">
+                        <option value="michael_jackson">Michael Jackson</option>
+                        <option value="whitney_houston">Whitney Houston</option>
+                        <option value="madonna">Madonna</option>
+                    </optgroup>
+                    <optgroup label="Soul/R&B">
+                        <option value="amy_winehouse">Amy Winehouse</option>
+                        <option value="stevie_wonder">Stevie Wonder</option>
+                        <option value="bill_withers">Bill Whiters</option>
+                    </optgroup>
+                </select>
+                <span class="error-message" id="error-melhor_cantor"></span>
+            </div>
+            </fieldset>
+
+            <div id="error-summary" class="summary-box" role="alert" aria-live="polite" hidden>
+                <h3>Problemas encontrados:</h3>
+                <ul id="error-summary-list">
+                </ul>
+            </div>
+
+            <input type="submit" value="Enviar Formulário">
+            <input type="reset" value="Limpar Formulário">
+
+            <div id="confirmation-summary" class="summary-box" hidden>
+                <h3>Resumo dos Dados Informados</h3>
+                <div id="summary-content">
+                </div>
+                <div class="confirmation-actions">
+                    <button type="button" id="confirm-submit">Confirmar Envio</button>
+                    <button type="button" id="cancel-submit">Editar Dados</button>
+                </div>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>Autoria: Eduardo Kendy Pontes Veiga</p>
+        <p>Contato: <a href="eveiga@alunos.utfpr.edu.br">eveiga@alunos.utfpr.edu.br</a></p>
+        <p>&copy; 2025 Atividade de Formulários</p>
+    </footer>
+</body>
+
+</html>
