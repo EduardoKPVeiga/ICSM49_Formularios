@@ -51,7 +51,7 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
-.music-group {
+fieldset {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -69,7 +69,7 @@ input[type=checkbox] {
 .music-group div {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .music-group label {
@@ -77,10 +77,21 @@ input[type=checkbox] {
 }
 
 select {
+    width: 100%;
+    box-sizing: border-box;
     padding: 14px 20px;
     border: 1px solid #ccc;
     margin: 8px 0;
-    border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
+}
+
+#artistas {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
 }
